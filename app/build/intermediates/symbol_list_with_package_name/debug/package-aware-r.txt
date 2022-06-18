@@ -2448,6 +2448,13 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable baseline_reply_20
+drawable baseline_reply_24
+drawable baseline_reply_black_18
+drawable baseline_reply_black_20
+drawable baseline_reply_black_24
+drawable baseline_reply_black_36
+drawable baseline_reply_black_48
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2519,13 +2526,13 @@ drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
-font coda
-font comic_neue
+font comfortaa
 id ALT
 id BOTTOM_END
 id BOTTOM_START
 id CTRL
 id FUNCTION
+id Login
 id META
 id NO_DEBUG
 id SHIFT
@@ -2701,7 +2708,6 @@ id edit_query
 id edittext_dropdown_editable
 id edittext_dropdown_noneditable
 id elastic
-id elevatedButton
 id end
 id endToStart
 id enterAlways
@@ -2743,6 +2749,8 @@ id honorRequest
 id horizontal_only
 id icon
 id icon_group
+id id_password
+id id_text
 id ifRoom
 id ignore
 id ignoreRequest
@@ -2770,6 +2778,7 @@ id line3
 id linear
 id listMode
 id list_item
+id login_btn
 id masked
 id match_constraint
 id match_parent
@@ -3102,6 +3111,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_login
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item

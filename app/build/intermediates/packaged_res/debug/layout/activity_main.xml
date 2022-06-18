@@ -27,10 +27,11 @@
                 android:src="@drawable/logo"
                 android:layout_gravity="center"
                 android:layout_marginRight="10dp" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/coda"
+                android:fontFamily="@font/comfortaa"
                 android:text="todo"
                 android:textSize="40dp" />
         </LinearLayout>
@@ -42,16 +43,14 @@
         android:background="@color/white"
         android:layout_weight="0"
         android:gravity="center"
-        android:padding="10dp"
-        >
+        android:padding="10dp">
         <Button
+            android:id="@+id/login_btn"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:id="@+id/elevatedButton"
             android:textColor="@color/black"
             app:rippleColor="@color/black"
             app:strokeColor="@color/black"
-            android:textSize="20dp"
             android:text="Login"
             app:strokeWidth="2dp"
             style="@style/Widget.Material3.Button.OutlinedButton"/>

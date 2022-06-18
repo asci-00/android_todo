@@ -1,31 +1,39 @@
 [
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\font_comic_neue.xml.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\font\\comic_neue.xml"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\font_comfortaa.ttf.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\font\\comfortaa.ttf"
     },
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_baseline_reply_black_20.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxxhdpi\\baseline_reply_black_20.png"
     },
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_baseline_reply_black_48.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-hdpi\\baseline_reply_black_48.png"
     },
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable\\logo.png"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_baseline_reply_black_48.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxxhdpi\\baseline_reply_black_48.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_baseline_reply_black_20.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-hdpi\\baseline_reply_black_20.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_baseline_reply_black_20.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-mdpi\\baseline_reply_black_20.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_baseline_reply_black_48.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-mdpi\\baseline_reply_black_48.png"
     },
     {
         "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
         "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\font_coda.ttf.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\font\\coda.ttf"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_baseline_reply_black_24.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxhdpi\\baseline_reply_black_24.png"
     },
     {
         "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
@@ -44,8 +52,8 @@
         "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_baseline_reply_black_18.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-hdpi\\baseline_reply_black_18.png"
     },
     {
         "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable_main.jpg.flat",
@@ -56,8 +64,20 @@
         "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_baseline_reply_black_20.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxhdpi\\baseline_reply_black_20.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_baseline_reply_black_36.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xhdpi\\baseline_reply_black_36.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_baseline_reply_black_20.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xhdpi\\baseline_reply_black_20.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_baseline_reply_black_36.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-hdpi\\baseline_reply_black_36.png"
     },
     {
         "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -68,11 +88,99 @@
         "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_baseline_reply_black_36.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-mdpi\\baseline_reply_black_36.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable_logo.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_reply_24.xml.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable\\baseline_reply_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable_baseline_reply_20.xml.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable\\baseline_reply_20.xml"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_baseline_reply_black_36.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxhdpi\\baseline_reply_black_36.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_baseline_reply_black_36.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxxhdpi\\baseline_reply_black_36.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_baseline_reply_black_24.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-mdpi\\baseline_reply_black_24.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_baseline_reply_black_48.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxhdpi\\baseline_reply_black_48.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-hdpi_baseline_reply_black_24.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-hdpi\\baseline_reply_black_24.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_baseline_reply_black_24.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxxhdpi\\baseline_reply_black_24.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-mdpi_baseline_reply_black_18.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-mdpi\\baseline_reply_black_18.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_baseline_reply_black_48.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xhdpi\\baseline_reply_black_48.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxxhdpi_baseline_reply_black_18.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxxhdpi\\baseline_reply_black_18.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_baseline_reply_black_24.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xhdpi\\baseline_reply_black_24.png"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xhdpi_baseline_reply_black_18.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xhdpi\\baseline_reply_black_18.png"
+    },
+    {
         "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\build\\intermediates\\merged_res\\debug\\drawable-xxhdpi_baseline_reply_black_18.png.flat",
+        "source": "C:\\Users\\cangs\\AndroidStudioProjects\\todo\\app\\src\\main\\res\\drawable-xxhdpi\\baseline_reply_black_18.png"
     }
 ]

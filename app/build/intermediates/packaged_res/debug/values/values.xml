@@ -15,8 +15,7 @@
         </item>
     </string-array>
     <array name="preloaded_fonts" translatable="false">
-        <item>@font/</item>
-        <item>@font/comic_neue</item>
+        <item>@font/comfortaa</item>
     </array>
     <color name="black">#FF000000</color>
     <color name="purple_200">#FFBB86FC</color>
@@ -26,7 +25,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">todo</string>
-    <style name="Theme.Todo" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Todo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>

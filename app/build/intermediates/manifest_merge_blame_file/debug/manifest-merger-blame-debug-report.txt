@@ -10,70 +10,89 @@
 9        android:targetSdkVersion="32" />
 9-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:5:5-24:19
-12        android:allowBackup="true"
-12-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.7.0] C:\Users\cangs\.gradle\caches\transforms-3\b9e4376e452ce4f1a2bbb1fc4b534124\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:icon="@mipmap/ic_launcher"
-15-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:7:9-43
-16        android:label="@string/app_name"
-16-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:8:9-41
-17        android:roundIcon="@mipmap/ic_launcher_round"
-17-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:9:9-54
-18        android:supportsRtl="true"
-18-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:10:9-35
-19        android:testOnly="true"
-20        android:theme="@style/Theme.Todo" >
-20-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:11:9-42
-21        <activity
-21-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:12:9-20:20
-22            android:name="com.example.todo.MainActivity"
-22-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:13:13-41
-23            android:exported="true" >
-23-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:14:13-36
-24            <intent-filter>
-24-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:15:13-19:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:16:17-69
-25-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:16:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:18:17-77
-27-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:18:27-74
-28            </intent-filter>
-29        </activity>
-30
-31        <meta-data
-31-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:21:9-23:57
-32            android:name="preloaded_fonts"
-32-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:22:13-43
-33            android:resource="@array/preloaded_fonts" />
-33-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:23:13-54
-34
-35        <provider
-35-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
-36            android:name="androidx.startup.InitializationProvider"
-36-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
-37            android:authorities="com.example.todo.androidx-startup"
-37-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
-38            android:exported="false" >
-38-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
-39            <meta-data
-39-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
-40                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-40-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
-41                android:value="androidx.startup" />
-41-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
-42            <meta-data
-42-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\cangs\.gradle\caches\transforms-3\bdba8a1b7f77d959878d5a52670cf96f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
-43                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-43-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\cangs\.gradle\caches\transforms-3\bdba8a1b7f77d959878d5a52670cf96f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
-44                android:value="androidx.startup" />
-44-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\cangs\.gradle\caches\transforms-3\bdba8a1b7f77d959878d5a52670cf96f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
-45        </provider>
-46    </application>
-47
-48</manifest>
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:4:5-67
+11-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:4:22-64
+12
+13    <application
+13-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:5:5-29:19
+14        android:allowBackup="true"
+14-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:9:9-35
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.7.0] C:\Users\cangs\.gradle\caches\transforms-3\b9e4376e452ce4f1a2bbb1fc4b534124\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:hardwareAccelerated="false"
+17-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:12:9-44
+18        android:icon="@mipmap/ic_launcher"
+18-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:11:9-43
+19        android:label="@string/app_name"
+19-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:6:9-41
+20        android:largeHeap="true"
+20-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:7:9-33
+21        android:networkSecurityConfig="@xml/network_security_config"
+21-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:14:9-69
+22        android:roundIcon="@mipmap/ic_launcher_round"
+22-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:13:9-54
+23        android:supportsRtl="true"
+23-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:8:9-35
+24        android:testOnly="true"
+25        android:theme="@style/Theme.Todo" >
+25-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:10:9-42
+26        <activity
+26-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:15:9-23:20
+27            android:name="com.example.todo.activity.MainActivity"
+27-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:16:13-50
+28            android:exported="true" >
+28-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:17:13-36
+29            <intent-filter>
+29-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:18:13-22:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:19:17-69
+30-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:19:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:21:17-77
+32-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:21:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity
+35-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:24:9-84
+36            android:name="com.example.todo.activity.LoginActivity"
+36-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:24:19-57
+37            android:noHistory="true" />
+37-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:24:58-82
+38        <activity android:name="com.example.todo.activity.TodoActivity" />
+38-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:25:9-58
+38-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:25:19-56
+39
+40        <meta-data
+40-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:26:9-28:57
+41            android:name="preloaded_fonts"
+41-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:27:13-43
+42            android:resource="@array/preloaded_fonts" />
+42-->C:\Users\cangs\AndroidStudioProjects\todo\app\src\main\AndroidManifest.xml:28:13-54
+43
+44        <provider
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+45            android:name="androidx.startup.InitializationProvider"
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:27:13-67
+46            android:authorities="com.example.todo.androidx-startup"
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:28:13-68
+47            android:exported="false" >
+47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:29:13-37
+48            <meta-data
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+49                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+49-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:32:17-75
+50                android:value="androidx.startup" />
+50-->[androidx.emoji2:emoji2:1.0.0] C:\Users\cangs\.gradle\caches\transforms-3\2c96a293c0a835e94af1ddc4d74ff22d\transformed\emoji2-1.0.0\AndroidManifest.xml:33:17-49
+51            <meta-data
+51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\cangs\.gradle\caches\transforms-3\bdba8a1b7f77d959878d5a52670cf96f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+52                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+52-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\cangs\.gradle\caches\transforms-3\bdba8a1b7f77d959878d5a52670cf96f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+53                android:value="androidx.startup" />
+53-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\cangs\.gradle\caches\transforms-3\bdba8a1b7f77d959878d5a52670cf96f\transformed\lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+54        </provider>
+55    </application>
+56
+57</manifest>

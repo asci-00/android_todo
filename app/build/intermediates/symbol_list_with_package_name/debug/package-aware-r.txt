@@ -1270,6 +1270,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color grey
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color m3_appbar_overlay_color
@@ -1778,6 +1779,7 @@ color test_mtrl_calendar_day
 color test_mtrl_calendar_day_selected
 color tooltip_background_dark
 color tooltip_background_light
+color warning
 color white
 color white98
 dimen abc_action_bar_content_inset_material
@@ -2451,6 +2453,7 @@ drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_reply_20
 drawable baseline_reply_24
+drawable border_box
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2459,6 +2462,7 @@ drawable btn_radio_off_mtrl
 drawable btn_radio_off_to_on_mtrl_animation
 drawable btn_radio_on_mtrl
 drawable btn_radio_on_to_off_mtrl_animation
+drawable delete_48
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -2475,6 +2479,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable item_48
 drawable logo
 drawable logout_48
 drawable m3_appbar_background
@@ -2668,6 +2673,7 @@ id custom
 id customPanel
 id cut
 id date_picker_actions
+id date_text
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -2763,6 +2769,8 @@ id item1
 id item2
 id item3
 id item4
+id item_delete_btn
+id item_text
 id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
@@ -2776,9 +2784,11 @@ id line3
 id linear
 id listMode
 id list_item
+id list_view
 id loading_layout
 id login_btn
 id login_req_btn
+id logout_btn
 id masked
 id match_constraint
 id match_parent
@@ -3208,6 +3218,7 @@ layout text_view_with_line_height_from_layout
 layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
+layout view_item
 menu example_menu
 menu example_menu2
 mipmap ic_launcher

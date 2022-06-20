@@ -5,13 +5,19 @@
       <map>
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable-hdpi/logout-48px.xml" value="0.3295" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/baseline_reply_24.xml" value="0.3295" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/border_box.xml" value="0.4915" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/delete-48px.xml" value="0.4915" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/delete_48.xml" value="0.4915" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/item_48.xml" value="0.4915" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/logout-48px.xml" value="0.3295" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/drawable/logout_48.xml" value="0.4915" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/font/.xml" value="0.6046875" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/font/comfortaa.xml" value="0.6046875" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/font/comic_neue.xml" value="0.6046875" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/layout/activity_todos.xml" value="0.32708333333333334" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/layout/activity_todos.xml" value="0.33" />
+        <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/layout/view_item.xml" value="0.33" />
         <entry key="..\:/Users/cangs/AndroidStudioProjects/todo/app/src/main/res/xml/network_security_config.xml" value="0.1590678824721378" />
       </map>
     </option>

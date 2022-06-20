@@ -14,6 +14,6 @@ import retrofit2.http.Path;
 public interface RetrofitService {
     @POST("users")
     Call<Login.Response> login(@Body Login.Request body);
-    @GET("users/${id}/todos")
+    @GET("users/{id}/todos")
     Call<List<Todo.Response>> getTodos(@Path("id") Integer id);
 }

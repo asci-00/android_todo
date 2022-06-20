@@ -1,7 +1,8 @@
 package com.example.todo.activity;
 
-import static com.example.todo.util.Api.service;
+import static com.example.todo.util.Service.service;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
@@ -18,9 +19,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.todo.R;
 import com.example.todo.dto.Login;
 import com.example.todo.util.Store;
+import com.example.todo.util.Util;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.List;
 import java.util.Map;
 
@@ -29,11 +34,13 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
-    TextInputLayout id_text, pw_text;
-    LinearLayout loading_layout;
-    ImageButton back_btn;
-    Button login_btn;
-    Store store;
+    private LoginActivity loginActivity = this;
+    private TextInputLayout id_text, pw_text;
+    private LinearLayout loading_layout;
+    private FileOutputStream file;
+    private ImageButton back_btn;
+    private Button login_btn;
+    private Store store;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,42 +58,52 @@ public class LoginActivity extends AppCompatActivity {
 
         back_btn.setOnClickListener(view -> super.onBackPressed());
 
-        LoginActivity loginActivity = this;
+        login_btn.setOnClickListener(this::requestLogin);
+    }
 
-        login_btn.setOnClickListener(view -> {
-            loading_layout.setVisibility(View.VISIBLE);
+    public void requestLogin(View view) {
+        loading_layout.setVisibility(View.VISIBLE);
 
-            final String name = id_text.getEditText().toString();
-            final String pw = pw_text.getEditText().toString();
+        final String name = id_text.getEditText().getText().toString();
+        final String pw = pw_text.getEditText().getText().toString();
 
-            Login.Request request = new Login.Request(name, pw);
+        Log.i("Login", String.format("request %s %s", name, pw));
 
-            service.login(request).enqueue(new Callback<Login.Response>() {
-                @Override
-                public void onResponse(Call<Login.Response> call, Response<Login.Response> response) {
-                    if(response.isSuccessful()) {
-                        Log.i("Login", "Success api request");
+        Login.Request request = new Login.Request(name, pw);
 
-                        final Map<String, List<String>> headers = response.headers().toMultimap();
-                        final int id = Integer.parseInt(headers.get("location").get(0));
+        service.login(request).enqueue(new Callback<Login.Response>() {
+            @Override
+            public void onResponse(Call<Login.Response> call, Response<Login.Response> response) {
+                if(response.isSuccessful()) {
+                    Log.i("Login", "Success api request");
 
-                        store.setLogin(true);
-                        store.setUserId(id);
+                    final Map<String, List<String>> headers = response.headers().toMultimap();
+                    final int id = Integer.parseInt(headers.get("location").get(0));
 
-                        Intent intent = new Intent(loginActivity, TodoActivity.class);
-                        startActivity(intent);
-                    } else Snackbar.make(view, "오류 입니다.", Snackbar.LENGTH_LONG).show();
+                    store.setLogin(true);
+                    store.setUserId(id);
+                    store.setUserName(name);
 
-                    loading_layout.setVisibility(View.INVISIBLE);
-                }
+                    try {
+                        file = openFileOutput("secret_file", Context.MODE_PRIVATE);
+                        Util.writeLocalStorage(file, Integer.toString(id));
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    }
 
-                @Override
-                public void onFailure(Call<Login.Response> call, Throwable t) {
-                    loading_layout.setVisibility(View.INVISIBLE);
-                    Log.i("Login", String.format("error %s", t.toString()));
-                    Snackbar.make(view, "오류 입니다.", Snackbar.LENGTH_LONG).show();
-                }
-            });
+                    Intent intent = new Intent(loginActivity, TodoActivity.class);
+                    startActivity(intent);
+                } else Snackbar.make(view, "오류 입니다.", Snackbar.LENGTH_LONG).show();
+
+                loading_layout.setVisibility(View.INVISIBLE);
+            }
+
+            @Override
+            public void onFailure(Call<Login.Response> call, Throwable t) {
+                loading_layout.setVisibility(View.INVISIBLE);
+                Log.i("Login", String.format("error %s", t.toString()));
+                Snackbar.make(view, "서버에 문제가 발생하였습니다.", Snackbar.LENGTH_LONG).show();
+            }
         });
     }
 

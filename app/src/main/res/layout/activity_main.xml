@@ -47,12 +47,12 @@
         android:padding="10dp">
         <Button
             android:id="@+id/login_btn"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:layout_width="match_parent"
             android:textColor="@color/black"
             app:rippleColor="@color/black"
             app:strokeColor="@color/black"
-            android:text="Login"
+            android:text="LOG IN"
             app:strokeWidth="2dp"
             style="@style/Widget.Material3.Button.OutlinedButton"/>
     </LinearLayout>

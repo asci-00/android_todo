@@ -1,84 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="350dp">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scaleType="centerCrop"
-            android:src="@drawable/second"
-            android:layout_weight="0"/>
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/second"
+                    android:layout_weight="0"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/white98"
+                    android:padding="20dp">
+                    <ImageButton
+                        android:id="@+id/logout_btn"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:scaleType="centerInside"
+                        android:background="@android:color/transparent"
+                        android:layout_marginBottom="20dp"
+                        android:src="@drawable/logout_48"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/comfortaa"
+                        android:text="Todos"
+                        android:textColor="@color/black"
+                        android:textSize="40dp" />
+                    <TextView
+                        android:id="@+id/greet_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/comfortaa"
+                        android:text="guide message"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/task_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa"
+                        android:text="task number guide"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/required_guide_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/comfortaa"
+                        android:text="must finish task"
+                        android:textColor="@color/grey"
+                        android:textSize="17dp" />
+                </LinearLayout>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:text="Filtering navigation"/>
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="20dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:background="@color/white98"
+            android:id="@+id/todo_loading_layout"
+            android:visibility="invisible"
+            android:orientation="vertical"
+            android:gravity="center"
             android:padding="20dp">
-            <ImageButton
-                android:id="@+id/back_btn"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:scaleType="centerInside"
-                android:background="@android:color/transparent"
-                android:layout_marginBottom="30dp"
-                android:src="@drawable/logout_48"/>
-            <TextView
+            <com.google.android.material.progressindicator.CircularProgressIndicator
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="@font/comfortaa"
-                android:text="Todos"
-                android:textColor="@color/black"
-                android:textSize="40dp" />
-            <TextView
-                android:id="@+id/greet_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
-                android:fontFamily="@font/comfortaa"
-                android:text="guide message"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/task_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="@font/comfortaa"
-                android:text="task number guide"
-                android:textColor="@color/black"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/required_guide_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/comfortaa"
-                android:text="must finish task"
-                android:textColor="@color/black"
-                android:textSize="17dp" />
+                android:indeterminate="true" />
         </LinearLayout>
     </FrameLayout>
-
-    <LinearLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:background="@color/white98"
-        android:id="@+id/todo_loading_layout"
-        android:visibility="invisible"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="20dp">
-        <com.google.android.material.progressindicator.CircularProgressIndicator
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:indeterminate="true" />
-    </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.todo.activity;
 
+import static com.example.todo.util.Service.service;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
@@ -7,11 +8,16 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.todo.R;
+import com.example.todo.dto.Login;
 import com.example.todo.util.Store;
 import com.example.todo.util.Util;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private Button login_btn;
@@ -41,9 +47,19 @@ public class MainActivity extends AppCompatActivity {
             intent = new Intent(this, TodoActivity.class);
             store.setUserId(id);
 
+            service.getUser(id).enqueue(new Callback<Login.Response>() {
+                @Override
+                public void onResponse(Call<Login.Response> call, Response<Login.Response> response) {
+                    if(!response.isSuccessful()) return;
+                    store.setUserName(response.body().getName());
+                    startActivity(intent);
+                }
 
+                @Override
+                public void onFailure(Call<Login.Response> call, Throwable t) {
 
-            startActivity(intent);
+                }
+            });
         }
 
         login_btn.setOnClickListener(view -> {

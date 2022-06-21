@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -41,6 +42,11 @@
                 android:id="@+id/id_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusedByDefault="true"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                android:textColorHint="@color/black"
+                app:placeholderTextColor="@color/black"
                 android:hint="name">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -52,6 +58,9 @@
                 android:id="@+id/pw_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxStrokeColor="@color/black"
+                app:hintTextColor="@color/black"
+                app:placeholderTextColor="@color/black"
                 android:hint="password">
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -63,6 +72,8 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:id="@+id/login_req_btn"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/black"
                 android:text="Login"
                 style="@style/Widget.Material3.Button"/>
         </GridLayout>

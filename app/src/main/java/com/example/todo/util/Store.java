@@ -1,5 +1,7 @@
 package com.example.todo.util;
 
+import android.content.Context;
+
 import com.example.todo.dto.Todo;
 
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ public class Store {
     private Integer userId;
     private String userName;
     private ArrayList<Todo.Response> todos;
+    private Context nowContext = null;
 
     public boolean isLogin() {
         return isLogin;
@@ -46,6 +49,14 @@ public class Store {
         Store.instance = instance;
     }
 
+    public Context getNowContext() {
+        return nowContext;
+    }
+
+    public void setNowContext(Context nowContext) {
+        this.nowContext = nowContext;
+    }
+
     private static Store instance = new Store();
     public static Store getInstance() { return instance; }
 
@@ -55,5 +66,6 @@ public class Store {
         instance.userId = null;
         instance.userName = null;
         instance.todos = null;
+        instance.nowContext = null;
     }
 }

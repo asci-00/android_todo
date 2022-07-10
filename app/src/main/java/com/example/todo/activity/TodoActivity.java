@@ -20,9 +20,11 @@ import com.example.todo.util.ItemAdapter;
 import com.example.todo.util.Store;
 import com.example.todo.util.Util;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -30,12 +32,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TodoActivity extends AppCompatActivity {
-    private TextView greet_text, task_text, required_guide_text;
+    private TextView greet_text, task_text, required_guide_text, date_guide_text;
+    private ImageButton logout_btn, filter_btn, add_btn;
     private ArrayList<Todo.Response> todos;
     private LinearLayout loading_layout;
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
-    private ImageButton logout_btn;
     private Store store;
 
     @Override
@@ -43,12 +45,15 @@ public class TodoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todos);
 
-        loading_layout = findViewById(R.id.todo_loading_layout);
         required_guide_text = findViewById(R.id.required_guide_text);
+        loading_layout = findViewById(R.id.todo_loading_layout);
+        date_guide_text = findViewById(R.id.date_guide_text);
         recyclerView = findViewById(R.id.list_view);
         greet_text = findViewById(R.id.greet_text);
         logout_btn = findViewById(R.id.logout_btn);
+        filter_btn = findViewById(R.id.filter_btn);
         task_text = findViewById(R.id.task_text);
+        add_btn = findViewById(R.id.add_btn);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -57,11 +62,12 @@ public class TodoActivity extends AppCompatActivity {
         recyclerView.setAdapter(itemAdapter);
 
         store = Store.getInstance();
-
         loading_layout.setVisibility(View.VISIBLE);
-
         logout_btn.setOnClickListener(this::logout);
 
+        date_guide_text.setText(getNowFormattedDate());
+
+        store.setNowContext(TodoActivity.this);
         requestTodos();
     }
 
@@ -97,5 +103,24 @@ public class TodoActivity extends AppCompatActivity {
                     Log.i("Todo", t.toString());
                 }
             });
+    }
+
+    private String getNowFormattedDate() {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            LocalDate now = LocalDate.now();
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd");         // 포맷 적용
+            return now.format(formatter);
+        } else {
+            Date now = new Date();
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+            return formatter.format(now);
+        }
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        Util.dismissAlert();
     }
 }

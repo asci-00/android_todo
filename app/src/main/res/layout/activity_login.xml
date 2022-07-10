@@ -58,8 +58,10 @@
                 android:id="@+id/pw_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:focusedByDefault="true"
                 app:boxStrokeColor="@color/black"
                 app:hintTextColor="@color/black"
+                android:textColorHint="@color/black"
                 app:placeholderTextColor="@color/black"
                 android:hint="password">
                 <com.google.android.material.textfield.TextInputEditText
@@ -74,7 +76,8 @@
                 android:id="@+id/login_req_btn"
                 android:textColor="@color/white"
                 android:backgroundTint="@color/black"
-                android:text="Login"
+                android:textSize="20dp"
+                android:text="LOG IN"
                 style="@style/Widget.Material3.Button"/>
         </GridLayout>
     </LinearLayout>

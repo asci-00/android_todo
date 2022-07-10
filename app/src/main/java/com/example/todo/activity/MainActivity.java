@@ -67,4 +67,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        Util.dismissAlert();
+    }
 }

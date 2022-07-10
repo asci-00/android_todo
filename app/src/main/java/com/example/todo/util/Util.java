@@ -1,6 +1,10 @@
 package com.example.todo.util;
 
+import android.app.AlertDialog;
+import android.content.Context;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 
 import com.example.todo.dto.Todo;
 
@@ -12,11 +16,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Util {
+    private static Store store = Store.getInstance();
+    private static AlertDialog builder;
+
     public static long getCompletedTask(ArrayList<Todo.Response> todos) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return todos.stream().filter(todo -> todo.getCompleted()).count();
+        } else {
+            int count = 0;
+            for(Todo.Response todo: todos) if(todo.getCompleted()) count++;
+            return count;
         }
-        return 0;
     }
 
     public static boolean writeLocalStorageList(FileOutputStream file, ArrayList<String> data) {
@@ -68,5 +78,22 @@ public class Util {
             e.printStackTrace();
             return null;
         }
+    }
+
+    public static void alertMessage(String title, String message) {
+        Context context = store.getNowContext();
+        if(context == null) return;
+        Handler handler = new Handler(Looper.getMainLooper());
+        handler.postDelayed((Runnable) () -> {
+            builder = new AlertDialog.Builder(context)
+                    .setTitle(title)
+                    .setMessage(message)
+                    .create();
+            builder.show();
+        }, 0);
+
+    }
+    public static void dismissAlert() {
+        if(builder != null) builder.dismiss();
     }
 }

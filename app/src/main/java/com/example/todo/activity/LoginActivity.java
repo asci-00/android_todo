@@ -59,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
         back_btn.setOnClickListener(view -> super.onBackPressed());
 
         login_btn.setOnClickListener(this::requestLogin);
+        store.setNowContext(LoginActivity.this);
     }
 
     public void requestLogin(View view) {
@@ -123,5 +124,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         }
         return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        Util.dismissAlert();
     }
 }

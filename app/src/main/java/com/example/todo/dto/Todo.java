@@ -56,5 +56,16 @@ public class Todo {
             this.timestamp = timestamp;
             this.deadline = deadline;
         }
+
+        @Override
+        public String toString() {
+            return "Response{" +
+                    "id=" + id +
+                    ", item='" + item + '\'' +
+                    ", completed=" + completed +
+                    ", timestamp=" + timestamp +
+                    ", deadline=" + deadline +
+                    '}';
+        }
     }
 }

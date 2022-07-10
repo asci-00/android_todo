@@ -1,7 +1,44 @@
 package com.example.todo.dto;
 
 public class Todo {
-    public static class Request { }
+    public static class Request {
+        private String item;
+        private Boolean completed;
+        private Long timestamp;
+
+        public Request(String item, Boolean completed, Long timestamp) {
+            this.item = item;
+            this.completed = completed;
+            this.timestamp = timestamp;
+        }
+
+        public Request() { }
+
+        public String getItem() {
+            return item;
+        }
+
+        public void setItem(String item) {
+            this.item = item;
+        }
+
+        public Boolean getCompleted() {
+            return completed;
+        }
+
+        public void setCompleted(Boolean completed) {
+            this.completed = completed;
+        }
+
+        public Long getTimestamp() {
+            return timestamp;
+        }
+
+        public void setTimestamp(Long timestamp) {
+            this.timestamp = timestamp;
+        }
+
+    }
     public static class Response {
         private Integer id;
         private String item;

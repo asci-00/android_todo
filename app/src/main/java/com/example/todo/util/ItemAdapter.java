@@ -95,21 +95,25 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
             if(v.equals(deleteButton)) {
                 Log.i("ItemAdapter", String.format("delete [%d] %s", idx, todo));
-                removeAt(idx);
+                removeAt(idx, todo.getId());
             } else if(v.equals(layout)) {
                 Log.i("ItemAdapter", String.format("click [%d] %s", idx, todo));
                 todo.setCompleted(!todo.getCompleted());
+
+                Todo.Request updateTodo = new Todo.Request();
+                updateTodo.setCompleted(todo.getCompleted());
+                service.updateTodo(todo.getId(), updateTodo).enqueue(new EmptyCallback<>());
+
                 notifyItemChanged(idx);
             }
         }
     }
 
-    public void removeAt(int position) {
-        Todo.Response todo = itemList.get(position);
+    public void removeAt(int position, int id) {
         itemList.remove(position);
         notifyItemRemoved(position);
         notifyItemRangeChanged(position, itemList.size());
-//        deleteTodo(todo.getId());
+        deleteTodo(id);
     }
 
     private void deleteTodo(Integer id) {

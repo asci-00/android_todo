@@ -1,9 +1,11 @@
 package com.example.todo.activity;
 
 import static com.example.todo.util.Service.service;
+import static com.example.todo.util.Util.createDialog;
+import static com.example.todo.util.Util.dismissAlert;
+import static com.example.todo.util.Util.getCompletedTask;
 
 import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,14 +26,11 @@ import com.example.todo.util.ItemAdapter;
 import com.example.todo.util.Store;
 import com.google.android.material.textfield.TextInputLayout;
 
-import static com.example.todo.util.Util.*;
-
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -73,6 +72,16 @@ public class TodoActivity extends AppCompatActivity {
                     public void onResponse(Call<Void> call, Response<Void> response) { setHeaderMessage(); }
                     @Override
                     public void onFailure(Call<Void> call, Throwable t) { }
+                });
+            }
+
+            @Override
+            protected void toggleTodo(Integer id, Todo.Request todo) {
+                service.updateTodo(id, todo).enqueue(new Callback<Todo.Response>() {
+                    @Override
+                    public void onResponse(Call<Todo.Response> call, Response<Todo.Response> response) { setHeaderMessage();}
+                    @Override
+                    public void onFailure(Call<Todo.Response> call, Throwable t) { }
                 });
             }
         };

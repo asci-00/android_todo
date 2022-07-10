@@ -68,7 +68,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends
-            RecyclerView.ViewHolder implements View.OnClickListener {
+        RecyclerView.ViewHolder implements View.OnClickListener {
         ImageButton deleteButton;
         LinearLayout layout;
         ImageView itemImage;
@@ -102,7 +102,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
                 Todo.Request updateTodo = new Todo.Request();
                 updateTodo.setCompleted(todo.getCompleted());
-                service.updateTodo(todo.getId(), updateTodo).enqueue(new EmptyCallback<>());
+                toggleTodo(todo.getId(), updateTodo);
 
                 notifyItemChanged(idx);
             }
@@ -117,4 +117,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     }
 
     protected void deleteTodo(Integer id) { }
+    protected void toggleTodo(Integer id, Todo.Request todo) { }
 }

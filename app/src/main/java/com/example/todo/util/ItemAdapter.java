@@ -116,7 +116,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         deleteTodo(id);
     }
 
-    private void deleteTodo(Integer id) {
-        service.deleteTodo(id).enqueue(new EmptyCallback<>());
-    }
+    protected void deleteTodo(Integer id) { }
 }

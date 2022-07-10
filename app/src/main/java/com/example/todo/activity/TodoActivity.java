@@ -2,10 +2,13 @@ package com.example.todo.activity;
 
 import static com.example.todo.util.Service.service;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -16,9 +19,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todo.R;
 import com.example.todo.dto.Todo;
+import com.example.todo.util.EmptyCallback;
 import com.example.todo.util.ItemAdapter;
 import com.example.todo.util.Store;
-import com.example.todo.util.Util;
+import com.google.android.material.textfield.TextInputLayout;
+
+import static com.example.todo.util.Util.*;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -38,6 +44,7 @@ public class TodoActivity extends AppCompatActivity {
     private LinearLayout loading_layout;
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
+    private AlertDialog dialog;
     private Store store;
 
     @Override
@@ -58,17 +65,62 @@ public class TodoActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         todos = new ArrayList<>();
-        itemAdapter = new ItemAdapter(todos);
+        itemAdapter = new ItemAdapter(todos) {
+            @Override
+            protected void deleteTodo(Integer id) {
+                service.deleteTodo(id).enqueue(new Callback<Void>() {
+                    @Override
+                    public void onResponse(Call<Void> call, Response<Void> response) { setHeaderMessage(); }
+                    @Override
+                    public void onFailure(Call<Void> call, Throwable t) { }
+                });
+            }
+        };
         recyclerView.setAdapter(itemAdapter);
 
         store = Store.getInstance();
         loading_layout.setVisibility(View.VISIBLE);
-        logout_btn.setOnClickListener(this::logout);
 
+        dialog = getDialog();
         date_guide_text.setText(getNowFormattedDate());
+
+        logout_btn.setOnClickListener(this::logout);
+        add_btn.setOnClickListener(view -> dialog.show());
 
         store.setNowContext(TodoActivity.this);
         requestTodos();
+    }
+
+    private AlertDialog getDialog() {
+        AlertDialog.Builder builder = createDialog(TodoActivity.this);
+
+        TextInputLayout textContainer = new TextInputLayout(this);
+        EditText editText = new EditText(this);
+
+        textContainer.setPadding(60, 30, 60, 0);
+        textContainer.setHint("task name");
+        textContainer.addView(editText);
+
+        builder
+                .setTitle("새로운 TASK")
+                .setView(textContainer)
+                .setPositiveButton("생성", (dialogInterface, i) -> {
+                    Todo.Request newTodo = new Todo.Request();
+                    newTodo.setCompleted(false);
+                    newTodo.setItem(editText.getText().toString());
+
+                    editText.setText("");
+                    service.createTodo(store.getUserId(), newTodo).enqueue(new Callback<Todo.Response>() {
+                        @Override
+                        public void onResponse(Call<Todo.Response> call, Response<Todo.Response> response) { requestTodos(); }
+
+                        @Override
+                        public void onFailure(Call<Todo.Response> call, Throwable t) { }
+                    });
+                })
+                .setNegativeButton("취소", (dialogInterface, i) -> dialogInterface.cancel());
+
+        return builder.create();
     }
 
     private void logout(View view) {
@@ -82,27 +134,35 @@ public class TodoActivity extends AppCompatActivity {
     private void requestTodos() {
         service
             .getTodos(store.getUserId())
-            .enqueue(new Callback<List<Todo.Response>>() {
+            .enqueue(new Callback<ArrayList<Todo.Response>>() {
                 @Override
-                public void onResponse(Call<List<Todo.Response>> call, Response<List<Todo.Response>> response) {
+                public void onResponse(Call<ArrayList<Todo.Response>> call, Response<ArrayList<Todo.Response>> response) {
                     loading_layout.setVisibility(View.INVISIBLE);
                     if (!response.isSuccessful()) {
                         return;
                     }
-                    List<Todo.Response> res_todos = response.body();
+                    ArrayList<Todo.Response> res_todos = response.body();
+                    todos.clear();
                     todos.addAll(res_todos);
+
                     itemAdapter.notifyDataSetChanged();
 
                     greet_text.setText(String.format("Hello, %s", store.getUserName()));
-                    required_guide_text.setText(String.format("you complete %d/%d tasks!", Util.getCompletedTask(todos), todos.size()));
-                    task_text.setText(String.format("today must finish 0 task"));
+                    setHeaderMessage();
+
+                    recyclerView.scrollToPosition(0);
                 }
 
                 @Override
-                public void onFailure(Call<List<Todo.Response>> call, Throwable t) {
+                public void onFailure(Call<ArrayList<Todo.Response>> call, Throwable t) {
                     Log.i("Todo", t.toString());
                 }
             });
+    }
+
+    private void setHeaderMessage() {
+        required_guide_text.setText(String.format("you complete %d/%d tasks!", getCompletedTask(todos), todos.size()));
+        task_text.setText(String.format("today must finish 0 task"));
     }
 
     private String getNowFormattedDate() {
@@ -121,6 +181,6 @@ public class TodoActivity extends AppCompatActivity {
     public void onPause() {
         super.onPause();
 
-        Util.dismissAlert();
+        dismissAlert();
     }
 }

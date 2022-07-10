@@ -1,8 +1,11 @@
 package com.example.todo.util;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -93,7 +96,15 @@ public class Util {
         }, 0);
 
     }
+
     public static void dismissAlert() {
         if(builder != null) builder.dismiss();
+    }
+
+    public static AlertDialog.Builder createDialog(Activity activity) {
+        // Use the Builder class for convenient dialog construction
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        // Create the AlertDialog object and return it
+        return builder;
     }
 }

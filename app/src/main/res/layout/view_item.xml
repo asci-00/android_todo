@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_layout"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:background="@drawable/list_item_background"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
     android:layout_marginBottom="20dp"
-    android:padding="10dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:id="@+id/item_layout"
+    android:gravity="center"
+    android:padding="10dp">
     <ImageView
         android:id="@+id/item_image"
         android:layout_weight="0"
@@ -37,9 +38,17 @@
             android:text="0000-00-00"/>
     </LinearLayout>
     <ImageButton
+        android:id="@+id/item_update_btn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        android:background="#00000000"
+        app:tint="@color/black"
+        android:src="@drawable/edit_48"/>
+    <ImageButton
         android:id="@+id/item_delete_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:scaleType="centerCrop"
         android:background="#00000000"
         app:tint="@color/warning"

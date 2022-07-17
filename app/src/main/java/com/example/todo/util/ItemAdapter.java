@@ -1,10 +1,6 @@
 package com.example.todo.util;
 
-import static com.example.todo.util.Service.service;
-
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.graphics.drawable.TransitionDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,14 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.todo.R;
 import com.example.todo.dto.Todo;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private ArrayList<Todo.Response> itemList = null;
@@ -83,7 +72,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             dateText = itemView.findViewById(R.id.date_text);
             itemImage = itemView.findViewById(R.id.item_image);
             deleteButton = itemView.findViewById(R.id.item_delete_btn);
-            background = (TransitionDrawable) layout.getBackground();
             deleteButton.setOnClickListener(this);
             layout.setOnClickListener(this);
         }

@@ -8,11 +8,12 @@
     android:orientation="horizontal"
     android:id="@+id/item_layout"
     android:gravity="center"
+    android:elevation="3dp"
     android:padding="10dp">
     <ImageView
         android:id="@+id/item_image"
         android:layout_weight="0"
-        android:src="@drawable/item_48"
+        android:src="@drawable/item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"/>
@@ -44,7 +45,7 @@
         android:scaleType="centerCrop"
         android:background="#00000000"
         app:tint="@color/black"
-        android:src="@drawable/edit_48"/>
+        android:src="@drawable/edit"/>
     <ImageButton
         android:id="@+id/item_delete_btn"
         android:layout_width="40dp"
@@ -52,5 +53,5 @@
         android:scaleType="centerCrop"
         android:background="#00000000"
         app:tint="@color/warning"
-        android:src="@drawable/delete_48"/>
+        android:src="@drawable/delete"/>
 </LinearLayout>

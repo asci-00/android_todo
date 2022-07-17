@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_width="match_parent"
             android:orientation="vertical">
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp">
+                android:layout_height="260dp">
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -34,11 +34,11 @@
                         android:scaleType="centerInside"
                         android:background="@android:color/transparent"
                         android:layout_marginBottom="20dp"
-                        android:src="@drawable/logout_48"/>
+                        android:src="@drawable/logout"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginBottom="10dp"
                         android:fontFamily="@font/comfortaa"
                         android:text="Todos"
                         android:textColor="@color/black"
@@ -47,7 +47,7 @@
                         android:id="@+id/greet_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="5dp"
                         android:fontFamily="@font/comfortaa"
                         android:text="guide message"
                         android:textColor="@color/black"
@@ -60,7 +60,7 @@
                         android:fontFamily="@font/comfortaa"
                         android:text="task number guide"
                         android:textColor="@color/black"
-                        android:textSize="20dp" />
+                        android:textSize="13dp" />
 
                     <TextView
                         android:id="@+id/required_guide_text"
@@ -69,7 +69,7 @@
                         android:fontFamily="@font/comfortaa"
                         android:text="must finish task"
                         android:textColor="@color/grey"
-                        android:textSize="17dp" />
+                        android:textSize="13dp" />
                 </LinearLayout>
             </FrameLayout>
             <LinearLayout
@@ -90,17 +90,18 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:backgroundTint="@color/transparent"
-                    android:src="@drawable/filter_48"/>
+                    android:src="@drawable/filter"/>
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/list_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="vertical"
                 android:scrollbarThumbVertical="@android:color/darker_gray"
-                android:scrollbarSize="5dp"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
                 android:paddingHorizontal="10dp"
+                android:clipToPadding="false"
+                android:scrollbars="vertical"
+                android:id="@+id/list_view"
+                android:scrollbarSize="5dp"
                 android:paddingTop="10dp"/>
         </LinearLayout>
         <LinearLayout

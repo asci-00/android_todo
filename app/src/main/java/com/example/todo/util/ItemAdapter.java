@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -22,6 +21,7 @@ import java.util.ArrayList;
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     private ArrayList<Todo.Response> itemList = null;
     private TransitionDrawable background;
+
     public ItemAdapter(ArrayList<Todo.Response> itemList) {
         this.itemList = itemList;
     }
@@ -40,8 +40,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Todo.Response todo = itemList.get(position);
 
-        Log.i("ItemAdapter", String.format("bind [%d] %s", position, todo));
-
         holder.itemText.setText(todo.getItem());
         holder.dateText.setText(todo.getDeadline() == null ? "No deadline" : todo.getDeadline().toString() );
 
@@ -58,7 +56,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     public class ViewHolder extends
         RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageButton deleteButton;
         LinearLayout layout;
         ImageView itemImage;
         TextView itemText;
@@ -71,8 +68,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             itemText = itemView.findViewById(R.id.item_text);
             dateText = itemView.findViewById(R.id.date_text);
             itemImage = itemView.findViewById(R.id.item_image);
-            deleteButton = itemView.findViewById(R.id.item_delete_btn);
-            deleteButton.setOnClickListener(this);
             layout.setOnClickListener(this);
         }
 
@@ -81,10 +76,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             final int idx = getAdapterPosition();
             final Todo.Response todo = itemList.get(idx);
 
-            if(v.equals(deleteButton)) {
-                Log.i("ItemAdapter", String.format("delete [%d] %s", idx, todo));
-                removeAt(idx, todo.getId());
-            } else if(v.equals(layout)) {
+            if(v.equals(layout)) {
                 Log.i("ItemAdapter", String.format("click [%d] %s", idx, todo));
                 todo.setCompleted(!todo.getCompleted());
 

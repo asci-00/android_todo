@@ -15,13 +15,14 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.todo.R;
 import com.example.todo.dto.Todo;
-import com.example.todo.util.EmptyCallback;
 import com.example.todo.util.ItemAdapter;
 import com.example.todo.util.Store;
 import com.google.android.material.textfield.TextInputLayout;
@@ -45,6 +46,21 @@ public class TodoActivity extends AppCompatActivity {
     private ItemAdapter itemAdapter;
     private AlertDialog dialog;
     private Store store;
+
+    ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int idx = viewHolder.getAdapterPosition();
+            final int id = todos.get(idx).getId();
+
+            itemAdapter.removeAt(idx, id);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +101,12 @@ public class TodoActivity extends AppCompatActivity {
                 });
             }
         };
+
         recyclerView.setAdapter(itemAdapter);
+        recyclerView.setHasFixedSize(true);
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleItemTouchCallback);
+        itemTouchHelper.attachToRecyclerView(recyclerView);
 
         store = Store.getInstance();
         loading_layout.setVisibility(View.VISIBLE);
@@ -181,7 +202,7 @@ public class TodoActivity extends AppCompatActivity {
             return now.format(formatter);
         } else {
             Date now = new Date();
-            SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy년MM월dd일");
             return formatter.format(now);
         }
     }

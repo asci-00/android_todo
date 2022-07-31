@@ -44,8 +44,9 @@ public class TodoActivity extends AppCompatActivity {
     private LinearLayout loading_layout;
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
-    private AlertDialog dialog;
     private Store store;
+
+    private Todo.Response nowTodo = null;
 
     ItemTouchHelper.SimpleCallback simpleItemTouchCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
         @Override
@@ -100,6 +101,12 @@ public class TodoActivity extends AppCompatActivity {
                     public void onFailure(Call<Todo.Response> call, Throwable t) { }
                 });
             }
+
+            @Override
+            protected void updateTodo(Todo.Response todo) {
+                nowTodo = todo;
+                getDialog().show();
+            }
         };
 
         recyclerView.setAdapter(itemAdapter);
@@ -111,11 +118,13 @@ public class TodoActivity extends AppCompatActivity {
         store = Store.getInstance();
         loading_layout.setVisibility(View.VISIBLE);
 
-        dialog = getDialog();
         date_guide_text.setText(getNowFormattedDate());
 
         logout_btn.setOnClickListener(this::logout);
-        add_btn.setOnClickListener(view -> dialog.show());
+        add_btn.setOnClickListener(view -> {
+            nowTodo = null;
+            getDialog().show();
+        });
 
         store.setNowContext(TodoActivity.this);
         requestTodos();
@@ -131,16 +140,33 @@ public class TodoActivity extends AppCompatActivity {
         textContainer.setHint("task name");
         textContainer.addView(editText);
 
+        Todo.Request newTodo = new Todo.Request("", false, new Date().getTime());
+        String submitBtn = "생성";
+
+        Log.i("Todo", nowTodo == null ? "null" : nowTodo.toString());
+
+        if(nowTodo != null) {
+            submitBtn = "수정";
+
+            newTodo.setItem(nowTodo.getItem());
+            newTodo.setCompleted(nowTodo.getCompleted());
+
+            editText.setText(newTodo.getItem());
+        }
+
+        final Call<Todo.Response> request = nowTodo != null ?
+                service.updateTodo(nowTodo.getId(), newTodo) :
+                service.createTodo(store.getUserId(), newTodo);
+
         builder
                 .setTitle("새로운 TASK")
                 .setView(textContainer)
-                .setPositiveButton("생성", (dialogInterface, i) -> {
-                    Todo.Request newTodo = new Todo.Request();
-                    newTodo.setCompleted(false);
+                .setPositiveButton(submitBtn, (dialogInterface, i) -> {
                     newTodo.setItem(editText.getText().toString());
 
                     editText.setText("");
-                    service.createTodo(store.getUserId(), newTodo).enqueue(new Callback<Todo.Response>() {
+
+                    request.enqueue(new Callback<Todo.Response>() {
                         @Override
                         public void onResponse(Call<Todo.Response> call, Response<Todo.Response> response) { requestTodos(); }
 

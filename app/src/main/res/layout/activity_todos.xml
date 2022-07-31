@@ -87,9 +87,10 @@
                     android:text="Filtering navigation"/>
                 <ImageButton
                     android:id="@+id/filter_btn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:backgroundTint="@color/transparent"
+                    android:scaleType="centerCrop"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/shape_circle"
                     android:src="@drawable/filter"/>
             </LinearLayout>
 

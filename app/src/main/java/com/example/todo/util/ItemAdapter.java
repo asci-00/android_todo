@@ -2,10 +2,10 @@ package com.example.todo.util;
 
 import android.content.Context;
 import android.graphics.drawable.TransitionDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -54,13 +54,12 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         return itemList == null ? 0 : itemList.size();
     }
 
-    public class ViewHolder extends
-        RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        ImageButton item_update_btn;
         LinearLayout layout;
         ImageView itemImage;
         TextView itemText;
         TextView dateText;
-
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,7 +67,9 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             itemText = itemView.findViewById(R.id.item_text);
             dateText = itemView.findViewById(R.id.date_text);
             itemImage = itemView.findViewById(R.id.item_image);
+            item_update_btn = itemView.findViewById(R.id.item_update_btn);
             layout.setOnClickListener(this);
+            item_update_btn.setOnClickListener(this);
         }
 
         @Override
@@ -77,7 +78,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
             final Todo.Response todo = itemList.get(idx);
 
             if(v.equals(layout)) {
-                Log.i("ItemAdapter", String.format("click [%d] %s", idx, todo));
                 todo.setCompleted(!todo.getCompleted());
 
                 Todo.Request updateTodo = new Todo.Request();
@@ -85,7 +85,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
                 toggleTodo(todo.getId(), updateTodo);
 
                 notifyItemChanged(idx);
-            }
+            } else if(v.equals(item_update_btn)) updateTodo(todo);
         }
     }
 
@@ -98,4 +98,5 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
 
     protected void deleteTodo(Integer id) { }
     protected void toggleTodo(Integer id, Todo.Request todo) { }
+    protected void updateTodo(Todo.Response todo) { }
 }

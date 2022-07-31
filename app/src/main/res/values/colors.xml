@@ -9,7 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="white98">#98FFFFFF</color>
+    <color name="grey10">#FFEEEEEE</color>
     <color name="grey">#FF777777</color>
-    <color name="warning">#FFA80000</color>
     <color name="mtrl_textinput_default_box_stroke_color">#000000</color>
 </resources>
